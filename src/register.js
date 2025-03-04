@@ -34,7 +34,7 @@ export default function Register({ model }) {
     // users.users.push({ name, email, password, amount: 0 });
     // console.log(users.users);
     let item ={name, email, password, amount: 0}
-    axios.post('http://localhost:8080/create',item);
+    axios.post('https://server-wyos.onrender.com/create',item);
 
     // Reset form
     setName("");

@@ -13,7 +13,7 @@ export default function Alldata() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/data');
+            const response = await axios.get('https://server-wyos.onrender.com/data');
             setUsers(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -27,7 +27,7 @@ export default function Alldata() {
         }
 
         try {
-            await axios.delete(`http://localhost:8080/data/${id}`);
+            await axios.delete(`https://server-wyos.onrender.com/data/${id}`);
            
             setUsers(users.filter(user => user._id !== id));
             console.log(users)
@@ -59,7 +59,7 @@ export default function Alldata() {
         if (!selectedUser) return;
     
         try {
-            await axios.put(`http://localhost:8080/data/${selectedUser._id}`, selectedUser);
+            await axios.put(`https://server-wyos.onrender.com/data/${selectedUser._id}`, selectedUser);
     console.log(selectedUser)
             setUsers(users.map(user => (user._id === selectedUser._id ? selectedUser : user)));
             handleCloseModal();
